@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# parameters
+CID_VERSION="${1:?Error: CID_VERSION must be provided}"
+CID_SHA256="${2:?Error: CID_SHA256 must be provided for integrity check}"
+GPG_FINGERPRINT="${3:-}"
+
+# variables
+TMP_DIR="$(mktemp -d)"
+BIN_DIR="/usr/local/bin"
+BASE_URL="${CID_MIRROR_URL:-https://github.com/cidverse/cid/releases/download}"
+BINARY_URL="${BASE_URL}/v${CID_VERSION}/linux_amd64"
+SIG_URL="${BINARY_URL}.asc"
+
+# github actions
+if [[ "${GITHUB_ACTIONS:-}" == "true" ]]; then
+    echo "Detected GitHub Actions ..."
+
+    TOOL_DIR="${RUNNER_TOOL_CACHE}/cid-${CID_SHA256}"
+    BIN_DIR="${TOOL_DIR}/bin"
+fi
+
+# download
+echo "Fetching binary and signature [$CID_VERSION]..."
+curl -sSL -o "$TMP_DIR/cid" "$BINARY_URL"
+curl -sSL -o "$TMP_DIR/cid.asc" "$SIG_URL"
+
+# sha256 integrity
+if [[ -n "${CID_SHA256}" ]]; then
+    echo "Checking checksum..."
+    echo "${CID_SHA256}  $TMP_DIR/cid" | sha256sum -c --status -
+fi
+
+# gpg verification
+if [[ -n "${GPG_FINGERPRINT}" ]]; then
+    if [[ -n "${GPG_FINGERPRINT}" && ${#GPG_FINGERPRINT} -lt 40 ]]; then
+        echo "Error: GPG_FINGERPRINT looks to short. Use the full 40-character fingerprint for better security."
+        exit 1
+    fi
+    echo "Verifying GPG signature..."
+    gpg --keyserver hkps://keyserver.ubuntu.com --quiet --recv-keys "$GPG_FINGERPRINT"
+    if gpg --verify "$TMP_DIR/cid.asc" "$TMP_DIR/cid" 2>&1 | grep -q "Good signature"; then
+        echo "GPG verification successful using key with fingerprint ${GPG_FINGERPRINT}."
+    else
+        echo "Error: GPG verification failed!"
+        exit 1
+    fi
+fi
+
+# install binary
+mkdir -p "$BIN_DIR"
+install -m 755 "$TMP_DIR/cid" "$BIN_DIR/cid"
+
+# github actions
+if [[ "${GITHUB_ACTIONS:-}" == "true" ]]; then
+    echo "${BIN_DIR}" >> "$GITHUB_PATH"
+    echo "CID_VERSION=${CID_VERSION}" >> "$GITHUB_ENV"
+fi
+
+# export to path
+export PATH="${BIN_DIR}:${PATH}"
+echo "CID version: ${CID_VERSION}"
