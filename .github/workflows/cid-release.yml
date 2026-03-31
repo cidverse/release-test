@@ -96,7 +96,7 @@ jobs:
           persist-credentials: false
       - name: Prepare Tooling
         shell: bash
-        run: bash .cid/scripts/install.sh "0.10.0" "cf177afa6e9b473ee18cf97e9bf92a344c497446bd0371032e9d0866a517a536" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
+        run: bash .cid/scripts/install.sh "0.10.0" "e29425985778ea27e78c364621a59cd0df2c1963e025b97b34187a41af6319e5" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
       - name: Action - go-build [github.com/cidverse/reposync]
         env:
           CID_WORKFLOW: "${{ env.CID_WORKFLOW }}"
@@ -147,7 +147,7 @@ jobs:
           persist-credentials: false
       - name: Prepare Tooling
         shell: bash
-        run: bash .cid/scripts/install.sh "0.10.0" "cf177afa6e9b473ee18cf97e9bf92a344c497446bd0371032e9d0866a517a536" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
+        run: bash .cid/scripts/install.sh "0.10.0" "e29425985778ea27e78c364621a59cd0df2c1963e025b97b34187a41af6319e5" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
       - name: Action - go-test [github.com/cidverse/reposync]
         env:
           CID_WORKFLOW: "${{ env.CID_WORKFLOW }}"
@@ -196,7 +196,7 @@ jobs:
           persist-credentials: false
       - name: Prepare Tooling
         shell: bash
-        run: bash .cid/scripts/install.sh "0.10.0" "cf177afa6e9b473ee18cf97e9bf92a344c497446bd0371032e9d0866a517a536" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
+        run: bash .cid/scripts/install.sh "0.10.0" "e29425985778ea27e78c364621a59cd0df2c1963e025b97b34187a41af6319e5" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
       - name: Action - gitleaks-scan
         env:
           CID_WORKFLOW: "${{ env.CID_WORKFLOW }}"
@@ -246,7 +246,7 @@ jobs:
           persist-credentials: false
       - name: Prepare Tooling
         shell: bash
-        run: bash .cid/scripts/install.sh "0.10.0" "cf177afa6e9b473ee18cf97e9bf92a344c497446bd0371032e9d0866a517a536" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
+        run: bash .cid/scripts/install.sh "0.10.0" "e29425985778ea27e78c364621a59cd0df2c1963e025b97b34187a41af6319e5" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
       - name: Action - semgrep-scan
         env:
           CID_WORKFLOW: "${{ env.CID_WORKFLOW }}"
@@ -298,7 +298,7 @@ jobs:
           persist-credentials: false
       - name: Prepare Tooling
         shell: bash
-        run: bash .cid/scripts/install.sh "0.10.0" "cf177afa6e9b473ee18cf97e9bf92a344c497446bd0371032e9d0866a517a536" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
+        run: bash .cid/scripts/install.sh "0.10.0" "e29425985778ea27e78c364621a59cd0df2c1963e025b97b34187a41af6319e5" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
       - name: Action - trivyfs-scan
         env:
           CID_WORKFLOW: "${{ env.CID_WORKFLOW }}"
@@ -347,7 +347,7 @@ jobs:
           persist-credentials: false
       - name: Prepare Tooling
         shell: bash
-        run: bash .cid/scripts/install.sh "0.10.0" "cf177afa6e9b473ee18cf97e9bf92a344c497446bd0371032e9d0866a517a536" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
+        run: bash .cid/scripts/install.sh "0.10.0" "e29425985778ea27e78c364621a59cd0df2c1963e025b97b34187a41af6319e5" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
       - name: Action - zizmor-scan
         env:
           CID_WORKFLOW: "${{ env.CID_WORKFLOW }}"
@@ -402,7 +402,7 @@ jobs:
           persist-credentials: false
       - name: Prepare Tooling
         shell: bash
-        run: bash .cid/scripts/install.sh "0.10.0" "cf177afa6e9b473ee18cf97e9bf92a344c497446bd0371032e9d0866a517a536" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
+        run: bash .cid/scripts/install.sh "0.10.0" "e29425985778ea27e78c364621a59cd0df2c1963e025b97b34187a41af6319e5" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
       - name: Download Inputs > go-test-github-com-cidverse-reposync
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
@@ -464,7 +464,7 @@ jobs:
           persist-credentials: false
       - name: Prepare Tooling
         shell: bash
-        run: bash .cid/scripts/install.sh "0.10.0" "cf177afa6e9b473ee18cf97e9bf92a344c497446bd0371032e9d0866a517a536" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
+        run: bash .cid/scripts/install.sh "0.10.0" "e29425985778ea27e78c364621a59cd0df2c1963e025b97b34187a41af6319e5" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
       - name: Action - changelog-generate
         env:
           CID_WORKFLOW: "${{ env.CID_WORKFLOW }}"
@@ -514,7 +514,7 @@ jobs:
           persist-credentials: false
       - name: Prepare Tooling
         shell: bash
-        run: bash .cid/scripts/install.sh "0.10.0" "cf177afa6e9b473ee18cf97e9bf92a344c497446bd0371032e9d0866a517a536" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
+        run: bash .cid/scripts/install.sh "0.10.0" "e29425985778ea27e78c364621a59cd0df2c1963e025b97b34187a41af6319e5" "76A4948E69C62589C7B0AB84E414434DF5371FB6"
       - name: Download Inputs > changelog-generate
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
