@@ -664,7 +664,7 @@
           "id": "cidverse/cid",
           "type": "github",
           "version": "0.10.0",
-          "hash": "1b10f12ff353ff6542dcb768717af701aeb5ba0b772f063c519bbca7b38c5820",
+          "hash": "39bec45256b092f9bcfea863bb20b74bf40030d52a7993816ce601e60071ee69",
           "gpg-fingerprint": "76A4948E69C62589C7B0AB84E414434DF5371FB6"
         }
       },
@@ -1341,7 +1341,7 @@
           "id": "cidverse/cid",
           "type": "github",
           "version": "0.10.0",
-          "hash": "1b10f12ff353ff6542dcb768717af701aeb5ba0b772f063c519bbca7b38c5820",
+          "hash": "39bec45256b092f9bcfea863bb20b74bf40030d52a7993816ce601e60071ee69",
           "gpg-fingerprint": "76A4948E69C62589C7B0AB84E414434DF5371FB6"
         }
       },
@@ -2060,6 +2060,9 @@
                 {
                   "host": "pkg-containers.githubusercontent.com:443"
                 }
+              ],
+              "resources": [
+                "releases"
               ]
             },
             "inputs": {
@@ -2111,7 +2114,7 @@
           "id": "cidverse/cid",
           "type": "github",
           "version": "0.10.0",
-          "hash": "1b10f12ff353ff6542dcb768717af701aeb5ba0b772f063c519bbca7b38c5820",
+          "hash": "39bec45256b092f9bcfea863bb20b74bf40030d52a7993816ce601e60071ee69",
           "gpg-fingerprint": "76A4948E69C62589C7B0AB84E414434DF5371FB6"
         }
       },
@@ -2791,7 +2794,7 @@
           "id": "cidverse/cid",
           "type": "github",
           "version": "0.10.0",
-          "hash": "1b10f12ff353ff6542dcb768717af701aeb5ba0b772f063c519bbca7b38c5820",
+          "hash": "39bec45256b092f9bcfea863bb20b74bf40030d52a7993816ce601e60071ee69",
           "gpg-fingerprint": "76A4948E69C62589C7B0AB84E414434DF5371FB6"
         }
       },
